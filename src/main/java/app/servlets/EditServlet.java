@@ -1,6 +1,8 @@
 package app.servlets;
 
 import app.dao.DataAccess;
+import app.entities.User;
+
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,31 +12,24 @@ import javax.servlet.http.HttpServletResponse;
 
 public class EditServlet extends HttpServlet {
 
-        protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        {
-            String idTemp = request.getParameter("id");
-            int id = Integer.parseInt(idTemp);
-            request.setAttribute("getUserById", DataAccess.getUserById(id));
-            RequestDispatcher rd = request.getRequestDispatcher("views/EditUser.jsp");
-            try {
-                rd.forward(request, response);
-            } catch (ServletException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
+        req.setAttribute("user", DataAccess.getUserById(id));
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/EditUser.jsp");
+        requestDispatcher.forward(req,resp);
+    }
 
-        @Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
-                throws ServletException, IOException {
-            processRequest(request, response);
-        }
-
-        @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
-                throws ServletException, IOException {
-            processRequest(request, response);
-        }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
+        String name = req.getParameter("name");
+        int age = Integer.parseInt(req.getParameter("age"));
+        DataAccess da = new DataAccess();
+        da.edit(id, name, age);
+        resp.sendRedirect("/AllUsers");
+    }
 
 }

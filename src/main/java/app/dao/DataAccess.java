@@ -46,15 +46,13 @@ public class DataAccess {
     }
 
 
-    public static List<User> getUserById(int id){
-        List<User> ls = new LinkedList<User>();
+    public static User getUserById(int id){
+        User us = new User();
         String sql = "select * from users where id = " +id;
         try {
             ResultSet rs = DBUtils.getPreparedStatement(sql).executeQuery();
             while(rs.next()){
-                User c = new User(rs.getInt(1), rs.getString(2), rs.getInt(3));
-
-                ls.add(c);
+                us = new User(rs.getInt(1), rs.getString(2), rs.getInt(3));
             }
         } catch(SQLException ex) {
             Logger.getLogger(DataAccess.class.getName()).log(Level.SEVERE, null, ex);
@@ -62,9 +60,7 @@ public class DataAccess {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
-
-        return ls;
+        return us;
     }
 
     public void edit(int id, String name, int age){

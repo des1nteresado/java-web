@@ -12,7 +12,8 @@ import java.io.IOException;
 
 public class AddServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/AddUser.jsp");
         requestDispatcher.forward(req,resp);
     }
@@ -26,7 +27,6 @@ public class AddServlet extends HttpServlet {
         User user = new User(0,name, age);
         DataAccess da = new DataAccess();
         da.addNew(user);
-        resp.sendRedirect("views/AllUsers.jsp");
-
+        resp.sendRedirect("/AllUsers");
     }
 }

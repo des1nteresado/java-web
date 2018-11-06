@@ -8,16 +8,14 @@
 <body>
 <h1>Edit User</h1>
 <div>
-    <c:forEach items="${getUserById}" var="p">
         <form method="post">
-            <input type="hidden" name="id" value="${p.id}">
+            <input type="hidden" name="id" value="${user.getId()}">
             Name:<br>
-            <input type="text" value="${p.name}" name="name" ><br>
+            <input type="text" value="${user.getName()}" name="name" ><br>
             Age:<br>
-            <input type="text" value="${p.age}" name="age" ><br>
+            <input type="text" value="${user.getAge()}" name="age" ><br>
             <input type="submit" value="Edit">
         </form>
-    </c:forEach>
 </div>
 </body>
 </html>
