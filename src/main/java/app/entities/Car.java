@@ -1,18 +1,19 @@
 package app.entities;
 
-public class User {
+public class Car {
     private int id;
     private String name;
-    private int age;
+    private int user_id;
 
-    public User() {
+    public Car() {
     }
 
-    public User(int id, String name, int age) {
+    public Car(int id, String name, int user_id) {
         this.id = id;
         this.name = name;
-        this.age = age;
+        this.user_id = user_id;
     }
+
 
     public int getId() {
         return id;
@@ -26,20 +27,20 @@ public class User {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public int getUser_id() {
+        return user_id;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
     @Override
     public String toString() {
-        return "models.User{" +
+        return "models.Car{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", age=" + age +
+                ", user_id=" + user_id +
                 '}';
     }
 }
