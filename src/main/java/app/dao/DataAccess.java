@@ -81,7 +81,8 @@ public class DataAccess {
 
     }
 
-    public void delete(int id){
+    public Boolean delete(int id){
+        Boolean sc = true;
         try {
             String sql = "delete from users where id = ?";
             PreparedStatement ps = DBUtils.getPreparedStatement(sql);
@@ -89,10 +90,11 @@ public class DataAccess {
             ps.executeUpdate();
         } catch(SQLException ex) {
             Logger.getLogger(DataAccess.class.getName()).log(Level.SEVERE, null, ex);
-
+            sc = false;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        return sc;
     }
 
    /* public static void main(String[] args) {

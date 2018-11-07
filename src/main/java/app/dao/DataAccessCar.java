@@ -47,7 +47,7 @@ public class DataAccessCar {
 
     public static Car getCarById(int id){
         Car us = new Car();
-        String sql = "select * from cars where id = " +id;
+        String sql = "select * from cars where car_id = " + id;
         try {
             ResultSet rs = DBUtils.getPreparedStatement(sql).executeQuery();
             while(rs.next()){
@@ -64,7 +64,7 @@ public class DataAccessCar {
 
     public void edit(int id, String name, int user_id){
         try {
-            String sql = "update cars SET name = ?, user_id = ?" + " where id = ?";
+            String sql = "update cars SET name = ?, user_id = ?" + " where car_id = ?";
             PreparedStatement ps= DBUtils.getPreparedStatement(sql);
             ps.setString(1, name);
             ps.setInt(2, user_id);
@@ -82,7 +82,7 @@ public class DataAccessCar {
 
     public void delete(int id){
         try {
-            String sql = "delete from cars where id = ?";
+            String sql = "delete from cars where car_id = ?";
             PreparedStatement ps = DBUtils.getPreparedStatement(sql);
             ps.setInt(1, id);
             ps.executeUpdate();
@@ -94,29 +94,29 @@ public class DataAccessCar {
         }
     }
 
-   /* public static void main(String[] args) {
-        List<User> lst = getAll();
-        for(User i : lst)
+
+ /*   public static void main(String[] args) {
+        List<Car> lst = getAll();
+        for(Car i : lst)
         {
             System.out.println(i.getName());
         }
 
-        System.out.println("add !");
-        User c1 = new User(2, "vot ona");
-        DataAccess da = new DataAccess();
+      *//*  System.out.println("add !");
+        Car c1 = new Car(2, "vot ona");
+        DataAccessCar da = new DataAccessCar();
         da.addNew(c1);
-
+*//*
         System.out.println("delete!");
-        DataAccess da = new DataAccess();
-        da.delete(6);
+        DataAccessCar da = new DataAccessCar();
+        da.delete(5);
 
 
-        System.out.println("edit!");
-        DataAccess da = new DataAccess();
-        da.edit(1, "lamba");
+      *//*  System.out.println("edit!");
+        da.edit(1, "lamba", 1);*//*
 
-        List<User> lst1 = getAll();
-        for(User i : lst1)
+        List<Car> lst1 = getAll();
+        for(Car i : lst1)
         {
             System.out.println(i.getName());
         }

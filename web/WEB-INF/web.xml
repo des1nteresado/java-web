@@ -38,4 +38,39 @@
         <servlet-name>DeleteUser</servlet-name>
         <url-pattern>/DeleteUser</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>AddCar</servlet-name>
+        <servlet-class>app.servlets.AddCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddCar</servlet-name>
+        <url-pattern>/AddCar</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AllCars</servlet-name>
+        <servlet-class>app.servlets.ListCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AllCars</servlet-name>
+        <url-pattern>/AllCars</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EditCar</servlet-name>
+        <servlet-class>app.servlets.EditCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditCar</servlet-name>
+        <url-pattern>/EditCar</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeleteCar</servlet-name>
+        <servlet-class>app.servlets.DeleteCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteCar</servlet-name>
+        <url-pattern>/DeleteCar</url-pattern>
+    </servlet-mapping>
 </web-app>
