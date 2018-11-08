@@ -2,6 +2,7 @@ package app.servlets;
 
 import app.dao.DataAccess;
 import java.io.IOException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,10 +22,18 @@ public class DeleteServlet extends HttpServlet {
             System.out.println("ok");
         }
         else
+            response.sendRedirect("/AllUsers");
+        /*else
         {
-            response.sendRedirect("/AllCars");
-            request.setAttribute("user", id); // how i can transfer this id?
-            System.out.println("---");
-        }
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("views/AllUsers.jsp");
+            requestDispatcher.forward(request, response);
+        }*/
     }
+
+/*    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
+        req.setAttribute("user", id);
+    }*/
 }

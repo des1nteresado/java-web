@@ -8,8 +8,13 @@
 <body>
 <div class="w3-panel w3-teal" style="margin-bottom: 0; margin-top: 0">
     <h2 class="w3-text-white" style="text-shadow:1px 1px 0 #444">List Users</h2>
-    <% String id = (String)request.getAttribute("user");
-        out.println("You can not delete user with id = " + id); %>
+    <%
+        String id = (String)request.getAttribute("user");
+        if(id != null && id != "")
+    {
+        out.println("You can not delete user with id = " + id);
+    }
+    %>
 </div>
     <div>
         <table class="w3-table-all w3-hoverable">
