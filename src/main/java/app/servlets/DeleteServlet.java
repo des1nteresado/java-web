@@ -22,7 +22,7 @@ public class DeleteServlet extends HttpServlet {
             System.out.println("ok");
         }
         else
-            response.sendRedirect("/AllUsers");
+            response.sendError(523, "You can not delete this user!");
         /*else
         {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("views/AllUsers.jsp");
