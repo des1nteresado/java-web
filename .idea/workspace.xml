@@ -8,7 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1815f2fa-232a-4d63-b534-2f8c1c7f7506" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/servlets/DeleteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/servlets/DeleteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Challenjer_war_exploded/WEB-INF/classes/app/servlets/DeleteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Challenjer_war_exploded/WEB-INF/classes/app/servlets/DeleteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/servlets/DeleteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/servlets/DeleteServlet.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -62,7 +63,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="4" />
-          <entry key="java" value="38" />
+          <entry key="java" value="39" />
           <entry key="jsp" value="15" />
           <entry key="patch" value="1" />
           <entry key="sql" value="2" />
@@ -74,7 +75,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="4" />
-          <entry key="JAVA" value="38" />
+          <entry key="JAVA" value="39" />
           <entry key="JSP" value="15" />
           <entry key="PATCH" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -90,7 +91,7 @@
           <entry key="java" value="1691" />
           <entry key="jsp" value="1208" />
           <entry key="sql" value="42" />
-          <entry key="txt" value="172" />
+          <entry key="txt" value="234" />
           <entry key="xml" value="236" />
         </counts>
       </usages-collector>
@@ -99,7 +100,7 @@
           <entry key="HTML" value="293" />
           <entry key="JAVA" value="1691" />
           <entry key="JSP" value="1208" />
-          <entry key="PLAIN_TEXT" value="183" />
+          <entry key="PLAIN_TEXT" value="245" />
           <entry key="Scratch" value="42" />
           <entry key="XML" value="236" />
         </counts>
@@ -121,15 +122,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/views/AllCars.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/servlets/DeleteServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="310">
@@ -137,6 +129,15 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/app/servlets/AddCarServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -390,6 +391,14 @@
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Challenjer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Challenjer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="screenshots" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -400,7 +409,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541672358026" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541672407847" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -556,7 +565,7 @@
       <updated>1541449225729</updated>
       <workItem from="1541449230466" duration="9765000" />
       <workItem from="1541487611100" duration="16453000" />
-      <workItem from="1541622764269" duration="10371000" />
+      <workItem from="1541622764269" duration="10624000" />
     </task>
     <task id="LOCAL-00001" summary="add design">
       <created>1541499694137</created>
@@ -607,17 +616,23 @@
       <option name="project" value="LOCAL" />
       <updated>1541668356619</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add error message">
+      <created>1541672521896</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1541672521896</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36589000" />
+    <option name="totallyTimeSpent" value="36842000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18791947" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18791947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -627,7 +642,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32867134" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32867134" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -667,7 +682,8 @@
     <MESSAGE value="add car model, add view add car," />
     <MESSAGE value="create some servlets and jsps for second table..." />
     <MESSAGE value="add .txt with sql script. add screenshots." />
-    <option name="LAST_COMMIT_MESSAGE" value="add .txt with sql script. add screenshots." />
+    <MESSAGE value="add error message" />
+    <option name="LAST_COMMIT_MESSAGE" value="add error message" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/web/index.jsp" />
@@ -727,13 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/servlets/AddCarServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -873,6 +882,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/servlets/AddCarServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
         </state>
       </provider>
     </entry>
