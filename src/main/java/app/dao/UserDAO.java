@@ -1,6 +1,6 @@
 package app.dao;
 
-import app.db.DBUtils;
+import app.db.DbConnect;
 import app.entities.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,17 +10,17 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class DataAccess {
+public class UserDAO {
     public void addNew (User user) {
         try {
-            PreparedStatement ps = DBUtils.getPreparedStatement("insert into users values(null,?, ?)");
+            PreparedStatement ps = DbConnect.getPreparedStatement("insert into users values(null,?, ?)");
             ps.setString(1, user.getName());
             ps.setInt(2, user.getAge());
 
             ps.execute();
 
         } catch(SQLException ex) {
-            Logger.getLogger(DataAccess.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -31,7 +31,7 @@ public class DataAccess {
         List<User> ls = new LinkedList<User>();
 
         try {
-            ResultSet rs = DBUtils.getPreparedStatement("select * from users").executeQuery();
+            ResultSet rs = DbConnect.getPreparedStatement("select * from users").executeQuery();
             while(rs.next())
             {
                 User c = new User(rs.getInt(1), rs.getString(2), rs.getInt(3));
@@ -50,12 +50,12 @@ public class DataAccess {
         User us = new User();
         String sql = "select * from users where id = " +id;
         try {
-            ResultSet rs = DBUtils.getPreparedStatement(sql).executeQuery();
+            ResultSet rs = DbConnect.getPreparedStatement(sql).executeQuery();
             while(rs.next()){
                 us = new User(rs.getInt(1), rs.getString(2), rs.getInt(3));
             }
         } catch(SQLException ex) {
-            Logger.getLogger(DataAccess.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -66,14 +66,14 @@ public class DataAccess {
     public void edit(int id, String name, int age){
         try {
             String sql = "update users SET name = ?, age = ?" + " where id = ?";
-            PreparedStatement ps= DBUtils.getPreparedStatement(sql);
+            PreparedStatement ps= DbConnect.getPreparedStatement(sql);
             ps.setString(1, name);
             ps.setInt(2, age);
             ps.setInt(3, id);
 
             ps.executeUpdate();
         } catch(SQLException ex) {
-            Logger.getLogger(DataAccess.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -85,11 +85,11 @@ public class DataAccess {
         Boolean sc = true;
         try {
             String sql = "delete from users where id = ?";
-            PreparedStatement ps = DBUtils.getPreparedStatement(sql);
+            PreparedStatement ps = DbConnect.getPreparedStatement(sql);
             ps.setInt(1, id);
             ps.executeUpdate();
         } catch(SQLException ex) {
-            Logger.getLogger(DataAccess.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
             sc = false;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -106,16 +106,16 @@ public class DataAccess {
 
         System.out.println("add !");
         User c1 = new User(2, "vot ona");
-        DataAccess da = new DataAccess();
+        UserDAO da = new UserDAO();
         da.addNew(c1);
 
         System.out.println("delete!");
-        DataAccess da = new DataAccess();
+        UserDAO da = new UserDAO();
         da.delete(6);
 
 
         System.out.println("edit!");
-        DataAccess da = new DataAccess();
+        UserDAO da = new UserDAO();
         da.edit(1, "lamba");
 
         List<User> lst1 = getAll();

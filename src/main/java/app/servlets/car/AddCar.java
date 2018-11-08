@@ -1,9 +1,7 @@
-package app.servlets;
+package app.servlets.car;
 
-import app.dao.DataAccess;
-import app.dao.DataAccessCar;
+import app.dao.CarDAO;
 import app.entities.Car;
-import app.entities.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class AddCarServlet extends HttpServlet {
+public class AddCar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -26,7 +24,7 @@ public class AddCarServlet extends HttpServlet {
         String name = req.getParameter("name");
         int user_id = Integer.parseInt(req.getParameter("user_id"));
         Car car = new Car(0,name, user_id);
-        DataAccessCar da = new DataAccessCar();
+        CarDAO da = new CarDAO();
         da.addNew(car);
         resp.sendRedirect("/AllCars");
     }

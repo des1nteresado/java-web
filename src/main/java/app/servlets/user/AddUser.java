@@ -1,6 +1,6 @@
-package app.servlets;
+package app.servlets.user;
 
-import app.dao.DataAccess;
+import app.dao.UserDAO;
 import app.entities.User;
 
 import javax.servlet.RequestDispatcher;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class AddServlet extends HttpServlet {
+public class AddUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -25,7 +25,7 @@ public class AddServlet extends HttpServlet {
         String name = req.getParameter("name");
         int age = Integer.parseInt(req.getParameter("age"));
         User user = new User(0,name, age);
-        DataAccess da = new DataAccess();
+        UserDAO da = new UserDAO();
         da.addNew(user);
         resp.sendRedirect("/AllUsers");
     }

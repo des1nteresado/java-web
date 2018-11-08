@@ -5,7 +5,7 @@
          version="4.0">
     <servlet>
         <servlet-name>AddUser</servlet-name>
-        <servlet-class>app.servlets.AddServlet</servlet-class>
+        <servlet-class>app.servlets.user.AddUser</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddUser</servlet-name>
@@ -14,7 +14,7 @@
 
     <servlet>
         <servlet-name>AllUsers</servlet-name>
-        <servlet-class>app.servlets.ListServlet</servlet-class>
+        <servlet-class>app.servlets.user.ListUser</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AllUsers</servlet-name>
@@ -23,7 +23,7 @@
 
     <servlet>
         <servlet-name>EditUser</servlet-name>
-        <servlet-class>app.servlets.EditServlet</servlet-class>
+        <servlet-class>app.servlets.user.EditUser</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>EditUser</servlet-name>
@@ -32,7 +32,7 @@
 
     <servlet>
         <servlet-name>DeleteUser</servlet-name>
-        <servlet-class>app.servlets.DeleteServlet</servlet-class>
+        <servlet-class>app.servlets.user.DeleteUser</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DeleteUser</servlet-name>
@@ -42,7 +42,7 @@
 
     <servlet>
         <servlet-name>AddCar</servlet-name>
-        <servlet-class>app.servlets.AddCarServlet</servlet-class>
+        <servlet-class>app.servlets.car.AddCar</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddCar</servlet-name>
@@ -51,7 +51,7 @@
 
     <servlet>
         <servlet-name>AllCars</servlet-name>
-        <servlet-class>app.servlets.ListCarServlet</servlet-class>
+        <servlet-class>app.servlets.car.ListCar</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AllCars</servlet-name>
@@ -59,7 +59,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>EditCar</servlet-name>
-        <servlet-class>app.servlets.EditCarServlet</servlet-class>
+        <servlet-class>app.servlets.car.EditCar</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>EditCar</servlet-name>
@@ -67,7 +67,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>DeleteCar</servlet-name>
-        <servlet-class>app.servlets.DeleteCarServlet</servlet-class>
+        <servlet-class>app.servlets.car.DeleteCar</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DeleteCar</servlet-name>
