@@ -16,7 +16,7 @@ public class EditCar extends HttpServlet {
             throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
         req.setAttribute("car", CarDAO.getCarById(id));
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/EditCar.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/Car/EditCar.jsp");
         requestDispatcher.forward(req,resp);
     }
 
@@ -27,7 +27,7 @@ public class EditCar extends HttpServlet {
         String name = req.getParameter("name");
         int user_id = Integer.parseInt(req.getParameter("user_id"));
         CarDAO da = new CarDAO();
-        da.edit(id, name, user_id);
+        da.editCar(id, name, user_id);
         resp.sendRedirect("/AllCars");
     }
 

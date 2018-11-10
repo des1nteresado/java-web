@@ -15,7 +15,7 @@ public class DeleteUser extends HttpServlet {
         String idTemp = request.getParameter("id");
         int id = Integer.parseInt(idTemp);
         UserDAO da = new UserDAO();
-        if(da.delete(id))
+        if(da.deleteUser(id))
         {
             response.sendRedirect("/AllUsers");
             System.out.println("ok");

@@ -2,29 +2,36 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>All Cars</title>
+    <title>Users list</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 <div class="w3-panel w3-teal" style="margin-bottom: 0; margin-top: 0">
-    <h2 class="w3-text-white" style="text-shadow:1px 1px 0 #444">List cars</h2>
+    <h2 class="w3-text-white" style="text-shadow:1px 1px 0 #444">List of Users</h2>
+    <%
+        String id = (String)request.getAttribute("user");
+        if(id != null && id != "")
+    {
+        out.println("You can not delete user with id = " + id);
+    }
+    %>
 </div>
     <div>
         <table class="w3-table-all w3-hoverable">
             <tr class="w3-gray">
                 <td>ID</td>
                 <td>Name</td>
-                <td>User ID</td>
+                <td>Age</td>
                 <td>Actions</td>
             </tr>
-            <c:forEach items="${cars}" var = "car">
+            <c:forEach items="${users}" var = "user">
                 <tr>
-                    <td>${car.getId()}</td>
-                    <td>${car.getName()}</td>
-                    <td>${car.getUser_id()}</td>
+                    <td>${user.getId()}</td>
+                    <td>${user.getName()}</td>
+                    <td>${user.getAge()}</td>
                     <td>
-                        <a href="EditCar?id=${car.getId()}">Edit</a>
-                        <a href="DeleteCar?id=${car.getId()}">Delete</a></td>
+                        <a href="EditUser?id=${user.getId()}">Edit</a>
+                        <a href="DeleteUser?id=${user.getId()}">Delete</a></td>
                 </tr>
             </c:forEach>
         </table>

@@ -16,7 +16,7 @@ public class EditUser extends HttpServlet {
             throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
         req.setAttribute("user", UserDAO.getUserById(id));
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/EditUser.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/User/EditUser.jsp");
         requestDispatcher.forward(req,resp);
     }
 
@@ -27,7 +27,7 @@ public class EditUser extends HttpServlet {
         String name = req.getParameter("name");
         int age = Integer.parseInt(req.getParameter("age"));
         UserDAO da = new UserDAO();
-        da.edit(id, name, age);
+        da.editUser(id, name, age);
         resp.sendRedirect("/AllUsers");
     }
 

@@ -2,6 +2,7 @@ package app.servlets.car;
 
 import app.dao.CarDAO;
 import app.entities.Car;
+import app.entities.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,9 +16,9 @@ public class ListCar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<Car> cars = CarDAO.getAll();
+        List<Car> cars = CarDAO.getAllCars();
         request.setAttribute("cars", cars);
-        request.getRequestDispatcher("views/AllCars.jsp").forward(request, response);
+        request.getRequestDispatcher("views/Car/AllCars.jsp").forward(request, response);
     }
 
 

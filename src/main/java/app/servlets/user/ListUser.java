@@ -15,9 +15,9 @@ public class ListUser extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<User> users = UserDAO.getAll();
+        List<User> users = UserDAO.getAllUsers();
         request.setAttribute("users", users);
-        request.getRequestDispatcher("views/AllUsers.jsp").forward(request, response);
+        request.getRequestDispatcher("views/User/AllUsers.jsp").forward(request, response);
     }
 
 

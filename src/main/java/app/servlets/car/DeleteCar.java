@@ -16,7 +16,7 @@ public class DeleteCar extends HttpServlet {
         String idTemp = request.getParameter("id");
         int id = Integer.parseInt(idTemp);
         CarDAO da = new CarDAO();
-        da.delete(id);
+        da.deleteCar(id);
         response.sendRedirect("/AllCars");
     }
 }

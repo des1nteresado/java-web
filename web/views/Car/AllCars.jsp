@@ -7,21 +7,21 @@
 </head>
 <body>
 <div class="w3-panel w3-teal" style="margin-bottom: 0; margin-top: 0">
-    <h2 class="w3-text-white" style="text-shadow:1px 1px 0 #444">List cars</h2>
+    <h2 class="w3-text-white" style="text-shadow:1px 1px 0 #444">List of cars</h2>
 </div>
     <div>
         <table class="w3-table-all w3-hoverable">
             <tr class="w3-gray">
                 <td>ID</td>
                 <td>Name</td>
-                <td>User ID</td>
+                <td>User name(id)</td>
                 <td>Actions</td>
             </tr>
             <c:forEach items="${cars}" var = "car">
                 <tr>
                     <td>${car.getId()}</td>
                     <td>${car.getName()}</td>
-                    <td>${car.getUser_id()}</td>
+                    <td>${car.getUser_name()}(${car.getUser_id()})</td>
                     <td>
                         <a href="EditCar?id=${car.getId()}">Edit</a>
                         <a href="DeleteCar?id=${car.getId()}">Delete</a></td>

@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class UserDAO {
-    public void addNew (User user) {
+    public void addNewUser (User user) {
         try {
             PreparedStatement ps = DbConnect.getPreparedStatement("insert into users values(null,?, ?)");
             ps.setString(1, user.getName());
@@ -27,7 +27,7 @@ public class UserDAO {
         }
     }
 
-    public static List<User> getAll() {
+    public static List<User> getAllUsers() {
         List<User> ls = new LinkedList<User>();
 
         try {
@@ -63,7 +63,7 @@ public class UserDAO {
         return us;
     }
 
-    public void edit(int id, String name, int age){
+    public void editUser(int id, String name, int age){
         try {
             String sql = "update users SET name = ?, age = ?" + " where id = ?";
             PreparedStatement ps= DbConnect.getPreparedStatement(sql);
@@ -81,7 +81,7 @@ public class UserDAO {
 
     }
 
-    public Boolean delete(int id){
+    public Boolean deleteUser(int id){
         Boolean sc = true;
         try {
             String sql = "delete from users where id = ?";

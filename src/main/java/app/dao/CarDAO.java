@@ -2,7 +2,9 @@ package app.dao;
 
 import app.db.DbConnect;
 import app.entities.Car;
+import app.entities.User;
 
+import javax.xml.transform.Result;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CarDAO {
-    public void addNew (Car car) {
+    public void addNewCar (Car car) {
         try {
             PreparedStatement ps = DbConnect.getPreparedStatement("insert into cars values(null,?, ?)");
             ps.setString(1, car.getName());
@@ -27,13 +29,13 @@ public class CarDAO {
         }
     }
 
-    public static List<Car> getAll() {
+    public static List<Car> getAllCars() {
         List<Car> ls = new LinkedList<Car>();
         try {
-            ResultSet rs = DbConnect.getPreparedStatement("select * from cars").executeQuery();
+            ResultSet rs = DbConnect.getPreparedStatement("select c.car_id, c.name, c.user_id, u.name as u_name_id from users u join cars c on c.user_id = u.id;").executeQuery();
             while(rs.next())
             {
-                Car c = new Car(rs.getInt(1), rs.getString(2), rs.getInt(3));
+                Car c = new Car(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4));
                 ls.add(c);
             }
         } catch (SQLException e) {
@@ -43,7 +45,6 @@ public class CarDAO {
         }
         return ls;
     }
-
 
     public static Car getCarById(int id){
         Car us = new Car();
@@ -62,7 +63,7 @@ public class CarDAO {
         return us;
     }
 
-    public void edit(int id, String name, int user_id){
+    public void editCar(int id, String name, int user_id){
         try {
             String sql = "update cars SET name = ?, user_id = ?" + " where car_id = ?";
             PreparedStatement ps= DbConnect.getPreparedStatement(sql);
@@ -80,7 +81,7 @@ public class CarDAO {
 
     }
 
-    public void delete(int id){
+    public void deleteCar(int id){
         try {
             String sql = "delete from cars where car_id = ?";
             PreparedStatement ps = DbConnect.getPreparedStatement(sql);
